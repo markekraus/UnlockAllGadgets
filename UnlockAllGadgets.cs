@@ -18,7 +18,6 @@ namespace UnlockAllGadgets
                 gadgetDirector.availBlueprints.Add(item);
                 gadgetDirector.registeredBlueprints.Add(item);
                 gadgetDirector.blueprints.Add(item);
-                MelonLogger.Msg($"Registered '{item.name}'.");
             }
         }
     }
