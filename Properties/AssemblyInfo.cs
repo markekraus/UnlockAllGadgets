@@ -4,10 +4,10 @@ using System.Runtime.InteropServices;
 using UnlockAllGadgets;
 using MelonLoader;
 
-[assembly: AssemblyVersion("1.0.1.0")]
+[assembly: AssemblyVersion("1.1.0.0")]
 [assembly: MelonAuthorColor(255, 255, 0, 188)]
 [assembly: MelonColor(255, 51, 95, 255)]
-[assembly: MelonInfo(typeof(Entry), "Unlock All Gadgets", "1.0.1", "MarkEKraus", null)]
+[assembly: MelonInfo(typeof(Entry), "Unlock All Gadgets", "1.1.0", "MarkEKraus", null)]
 [assembly: MelonGame("MonomiPark", "SlimeRancher2")]
 [assembly: AssemblyTitle("UnlockAllGadgets")]
 [assembly: AssemblyDescription("Slime Rancher 2 mod that unlocks all gadgets.")]
@@ -18,5 +18,5 @@ using MelonLoader;
 [assembly: AssemblyTrademark("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("55f8024f-3389-41fd-ab1b-07b923c56bfd")]
-[assembly: AssemblyFileVersion("1.0.1.0")]
+[assembly: AssemblyFileVersion("1.1.0.0")]
 
