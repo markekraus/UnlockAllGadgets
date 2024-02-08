@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Il2Cpp;
 using MelonLoader;
 using UnityEngine;
 
 namespace UnlockAllGadgets
 {
-    internal class Entry : MelonMod
+    public class Entry : MelonMod
     {
         private static HashSet<string> processedSaves = new ();
         public override void OnSceneWasLoaded(int buildIndex, string sceneName)
@@ -18,13 +19,14 @@ namespace UnlockAllGadgets
             if (!processedSaves.Add(savedGame))
                 return;
 
-            var gadgetDirector = Utility.Get<GadgetDirector>("SceneContext")._model;
-            foreach (var item in Resources.FindObjectsOfTypeAll<GadgetDefinition>())
+            var gadgetDirector = Utility.Get<GadgetDirector>("SceneContext");
+            var gadgetGroup = Utility.Get<IdentifiableTypeGroup>("GadgetGroup");
+            foreach (var group in gadgetGroup.memberGroups)
             {
-                gadgetDirector.RegisterBlueprint(item);
-                gadgetDirector.availBlueprints.Add(item);
-                gadgetDirector.registeredBlueprints.Add(item);
-                gadgetDirector.blueprints.Add(item);
+                foreach (var gadget in group.memberTypes)
+                {
+                    gadgetDirector.AddBlueprint(gadget.Cast<GadgetDefinition>(), false);
+                }
             }
         }
     }
